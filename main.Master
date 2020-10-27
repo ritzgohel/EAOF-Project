@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="EAOF_by_ritu.main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+      Economic Analysis Of Farmers
+    </title>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style style="font-family: 'Arial Rounded MT Bold'">
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: honeydew;
+  background-color: gainsboro;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 50px;
+  font-display:swap;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example 
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+} */
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  color: honeydew;
+  background-color: darkslategrey;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+     .auto-style1 {
+         color: #000000;
+     }
+ </style>
+</head>
+<body>
+   <form id="form1" runat="server"> 
+    <div class="header" style="background-image: url('http://localhost:64704/img/bg3.jpg')">
+  <h1 class="auto-style1" >ECONOMIC ANALYSIS OF FARMERS</h1>
+ 
+</div>
+
+<%--<div class="navbar">
+  <ul>
+    <li class="active" id="home" runat="server" visible="true"><a href="Home.aspx" class="active"><b>Home</b></a></li>
+    <li id="about" runat="server" visible="true"><a href="aboutus.aspx"><b>About Us</b></a></li>
+    <li id="contect" runat="server" visible="true"><a href="contact.aspx"><b>Contact Us</b></a></li>
+    <li id="login" runat="server" visible="true"><a href="login.aspx" class="right"><b>Login</b></a></li>
+    <li id="logout" runat="server" visible="false"><a href="login.aspx" class="right"><b>Logout</b></a></li>
+    <li id="cropdetail" runat="server" visible="false"><a href="cropdetail.aspx" ><b>Crop Detail</b></a></li>
+    <li id="pg" runat="server" visible="false"><a href="productiongraph.aspx" ><b>Production Graph</b></a></li>
+    <li id="showreport" runat="server" visible="false"><a href="showreport.aspx" ><b>Report</b></a></li>
+    <li id="usercost" runat="server" visible="false"><a href="usercost.aspx" ><b>Cost Graph</b></a></li>
+    <li id="userdetail" runat="server" visible="false"><a href="userdetail.aspx" ><b>User Detail</b></a></li>
+    <li id="chart" runat="server" visible="false"><a href="chart.aspx" ><b>Chart</b></a></li>
+  </ul>  
+
+   
+</div>--%>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <%--<div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>--%>
+    <ul class="nav navbar-nav">
+      <li class="active" id="home" runat="server" visible="true"><a href="Home.aspx">Home</a></li>
+      <%--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <%--<ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+
+        </ul>
+      </li>--%>
+      <%--<li><a href="#">Page 2</a></li>--%>
+            <li id="about" runat="server" visible="true"><a href="aboutus.aspx"><b>About Us</b></a></li>
+    <li id="contect" runat="server" visible="true"><a href="contact.aspx"><b>Contact Us</b></a></li>
+    <%--<li id="login" runat="server" visible="true"><a href="login.aspx"><b>Login</b></a></li>
+    <li id="logout" runat="server" visible="false"><a href="login.aspx"><b>Logout</b></a></li>--%>
+    <li id="cropdetail" runat="server" visible="false"><a href="cropdetail.aspx" ><b>Crop Detail</b></a></li>
+    <li id="pg" runat="server" visible="false"><a href="productiongraph.aspx" ><b>Production Graph</b></a></li>
+    <li id="showreport" runat="server" visible="false"><a href="showreport.aspx" ><b>Report</b></a></li>
+    <li id="usercost" runat="server" visible="false"><a href="usercost.aspx" ><b>Cost Graph</b></a></li>
+    <li id="userdetail" runat="server" visible="false"><a href="userdetail.aspx" ><b>User Detail</b></a></li>
+    <li id="chart" runat="server" visible="false"><a href="chart.aspx" ><b>Chart</b></a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+       
+      <li id="login" runat="server" visible="true"><a href="login.aspx"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+      <li id="logout" runat="server" visible="false"><a href="logout.aspx"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav> 
+      
+
+<div class="row">
+  <div class="side">
+   </div>
+</div> 
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+      
+        <div class="row">
+  <div class="side">
+   </div>
+</div>
+       <div class="footer">
+       <h2>Developed by:Reetu Gohel</h2>
+       </div>
+      
+ </form>  
+</body>
+</html>
+
+
+
+
